@@ -2,5 +2,14 @@ body {
     background-color: white;
 }
 
+#lista-tarefas {
+    background-color: gray;
+}
+
+#completed {
+    text-decoration: line-through; 
+}
+
+
 
 
