@@ -8,7 +8,7 @@ const tarefas = []; // criado uma array vazia.
 function mostraTarefas() {  // cria umafunção 
     elementoLista.innerHTML = ''; // limpa minha html , para inserir outro 
 
-    for (tarefa of tarefas) {  // criei um for para percorrer a array.
+    for (tarefa of tarefas) {   // criei um for para percorrer a array.
         const elementoTarefa = document.createElement('li') // criado para pegar o elemento li.
         const textoTarefa = document.createTextNode(tarefa) // criado para pegar o texto que a pessoa digitar 
 
