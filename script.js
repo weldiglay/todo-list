@@ -6,11 +6,12 @@ const tarefas = []; // criado uma array vazia.
 
 
 function mostraTarefas() {  // cria umafunção 
+
     elementoLista.innerHTML = ''; // limpa minha html , para inserir outro 
 
     for (tarefa of tarefas) {   // criei um for para percorrer a array.
-        const elementoTarefa = document.createElement('li') // criado para pegar o elemento li.
-        const textoTarefa = document.createTextNode(tarefa) // criado para pegar o texto que a pessoa digitar 
+        const elementoTarefa = document.createElement('li'); // criado para pegar o elemento li.
+        const textoTarefa = document.createTextNode(tarefa); // criado para pegar o texto que a pessoa digitar 
 
         const elementoLink = document.createElement('a');
 
@@ -27,6 +28,17 @@ function addTarefa() { // criado uma função
     elementoInput.value = ''; // limpa 
 
     mostraTarefas() // chamo a função
-}
+    }
 
 elementoBotao.setAttribute('onclick', 'addTarefa()');
+
+function elementoTarefa() {
+    const corCinza = document.querySelector('gray');
+    if (corCinza != null) {
+        corCinza.classList.remove('gray');
+    }
+event.target.classList.add('gray');
+
+}
+   
+   

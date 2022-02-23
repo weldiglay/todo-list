@@ -1,7 +1,11 @@
 .btn {
     background-color: coral; 
 }
- #input {
+#input {
      background-color: white;
      border: 10px;
  }
+
+#lista-tarefas {
+  background-color: rgb(128, 128, 128);
+}
