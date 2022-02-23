@@ -32,10 +32,10 @@ function addTarefa() { // criado uma função
 
 elementoBotao.setAttribute('onclick', 'addTarefa()');
 
-function elementoTarefa() {
-    const corCinza = document.querySelector('gray');
-    if (corCinza != null) {
-        corCinza.classList.remove('gray');
+function listaTarefa() {
+    const corGray = document.querySelector('gray');
+    if (corGray != null) {
+        corGray.classList.remove('gray');
     }
 event.target.classList.add('gray');
 
