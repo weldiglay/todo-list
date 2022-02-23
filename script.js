@@ -32,7 +32,7 @@ function addTarefa() { // criado uma função
 
 elementoBotao.setAttribute('onclick', 'addTarefa()');
 
-function listaTarefa() {
+function deletaTarefa() {
     const corGray = document.querySelector('gray');
     if (corGray != null) {
         corGray.classList.remove('gray');
