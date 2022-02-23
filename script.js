@@ -38,7 +38,9 @@ function deletaTarefa() {
         corGray.classList.remove('gray');
     }
 event.target.classList.add('gray');
-
 }
+
+
+
    
    
