@@ -7,14 +7,15 @@ let li = document.createElement('li');
 li.innerText = input.value;
 input.value = '';
 ol.appendChild(li);
-})
+});
 
-let li = document.createElement('li');
+let color = document.querySelector('.selected');
+let selectedColor;
 
-li.addEventListener('click', function() {
-    let item = document.querySelector('li');
-   for (i = 0; i < item.length; i += 1) {
-       item[i].classList.remove('selected');
-   }
-   li.classList.add('selected'); 
-}); 
+function clearSelection() {
+    color.classList.remove('selected');
+}
+function addSelection(target) {
+    target.classList.add('selected');
+    Selection = document.querySelector('.selected');
+}
