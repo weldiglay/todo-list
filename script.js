@@ -8,14 +8,6 @@ li.innerText = input.value;
 input.value = '';
 ol.appendChild(li);
 });
+ // Selecionando a Color
 
-let color = document.querySelector('.selected');
-let selectedColor;
-
-function clearSelection() {
-    color.classList.remove('selected');
-}
-function addSelection(target) {
-    target.classList.add('selected');
-    Selection = document.querySelector('.selected');
-}
+ ol.getElementById
