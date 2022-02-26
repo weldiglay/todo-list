@@ -5,10 +5,13 @@
 }
 
 .selected {
-    background-color: rgb(128, 128green, 128);
+    background-color: rgb(128, 128, 128);
 }
 
 .completed {
     text-decoration: line-through rgb(0, 0, 0);
 }
 
+.color {
+    background-color: rgb(128, 128, 128); 
+}
