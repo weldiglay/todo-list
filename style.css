@@ -1,14 +1,23 @@
 #lista-tarefas {
     width: 300px;
-    background-color: white;
-    border: 2px solid gray;
-}
-
-.selected {
-    background-color: gray;
+    background-color: white; 
 }
 
 .completed {
-    text-decoration: line-through rgb(0, 0, 0);
+    text-decoration: line-through solid rgb(0,0,0);
 }
+
+#funcionamento {
+    font-style: italic;
+}
+
+body {
+    background-color: blue;
+    text-align: center;
+}
+
+.selected {
+    background-color: rgb(128, 128, 128);
+}
+
 
