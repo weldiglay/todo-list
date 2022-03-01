@@ -4,7 +4,9 @@ let ol = document.getElementById('lista-tarefas');   // A ol e aa Lista PAI de T
 let apagaTudo = document.getElementById('apaga-tudo');
 let salvaTudo = document.getElementById('salvar-tarefas');
 let ClearComplete = document.getElementById('remover-finalizados'); 
-let ApagaComplete = document.getElementById('remover-selecionado');
+let ApagaSelecionado = document.getElementById('remover-selecionado');
+let botaoDown = document.getElementById('mover-baixo');
+let botaoUp   = document.getElementById('mover-cima');
 
 
 botaoAdicionar.addEventListener('click', function() {
@@ -24,13 +26,11 @@ function pintarCinza(event) {
   }
 ol.addEventListener('click', pintarCinza);
 
-
 function riscaItem(event) {
   const itemCompleto = event.target;
   itemCompleto.classList.toggle('completed');
 }
 ol.addEventListener('dblclick', riscaItem);
-
 
 function apagaLista() {
   ol.innerHTML = '';
@@ -60,6 +60,21 @@ ApagaCompleted.addEventListener('click', function () {                 // pegand
     }
 });
 
+function moveUp() {
+  const selectedItem = ol.querySelector('.selected');
+  if (selectedItem.classList.contains('selected')) {
+    ol.insertBefore(selectedItem, selectedItem.previousElementSibling);
+  }
+}
+botaoUp.addEventListener('click', moveUp);
+
+//function moveDown() {
+  //const selectedItem = ol.querySelector('.selected');
+  //if (selectedItem.classList.contains('selected')) {
+    //ol.insertBefore(selectedItem, selectedItem.nextElementSibling.nextElementSibling);
+  //}
+//}
+//botaoDown.addEventListener('click', moveDown);
 
 // function pintarCinza (event) {
 //   const itemEscolhido = event.target;
