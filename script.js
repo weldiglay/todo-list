@@ -4,6 +4,7 @@ let ol = document.getElementById('lista-tarefas');   // A ol e aa Lista PAI de T
 let apagaTudo = document.getElementById('apaga-tudo');
 let salvaTudo = document.getElementById('salvar-tarefas');
 let ClearComplete = document.getElementById('remover-finalizados'); 
+let ApagaComplete = document.getElementById('remover-selecionado');
 
 
 botaoAdicionar.addEventListener('click', function() {
@@ -43,16 +44,21 @@ ClearCompleted.addEventListener('click', function () {                 // pegand
       const taskRemove = listRemove[index];                             // variavel taskremove e ela mesma com o arrayindex
 
       if(taskRemove.className.includes('completed')){                   //condição se                
-      ol.removeChild(taskRemove);                                       // pega a lista pai e remove o filho resultado
+      ol.removeChild(taskRemove);                                       // pega a lista pai e remove o filho resultado }                                                                     //  ajuda hector , lucas 
 }
-  }
+    }
 });
 
-
-
-
-
-
+const ApagaCompleted = document.getElementById('remover-selecionado'); // variavel
+ApagaCompleted.addEventListener('click', function () {                 // pegando a variavel para add o envento click
+    const listRemove = document.querySelectorAll('li');                // variavel para remover todos do filho li
+    for (let index = 0; index < listRemove.length; index += 1) {       // for lacos e loop, menor e menos 
+      const taskRemove = listRemove[index];                             // variavel taskremove e ela mesma com o arrayindex
+      if(taskRemove.className.includes('selected')){                   //condição se                
+      ol.removeChild(taskRemove);                                       // pega a lista pai e remove o filho resultado }                                                                     //  ajuda hector , lucas 
+}
+    }
+});
 
 
 // function pintarCinza (event) {
