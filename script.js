@@ -68,13 +68,13 @@ function moveUp() {
 }
 botaoUp.addEventListener('click', moveUp);
 
-//function moveDown() {
-  //const selectedItem = ol.querySelector('.selected');
-  //if (selectedItem.classList.contains('selected')) {
-    //ol.insertBefore(selectedItem, selectedItem.nextElementSibling.nextElementSibling);
-  //}
-//}
-//botaoDown.addEventListener('click', moveDown);
+function moveDown() {
+  const selectedItem = ol.querySelector('.selected');
+  if (selectedItem.classList.contains('selected')) {
+    ol.insertBefore(selectedItem,selectedItem.nextElementSibling.nextElementSibling);
+  }
+}
+botaoDown.addEventListener('click', moveDown);
 
 // function pintarCinza (event) {
 //   const itemEscolhido = event.target;
