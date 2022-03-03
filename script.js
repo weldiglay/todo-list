@@ -62,11 +62,11 @@ ApagaCompleted.addEventListener('click', function () {                 // pegand
 
 btnSalva.onclick = () => {
   const item = [];
-
   for (let index = 0; index < ol.children.length; index += 1) {
     item.push(ol.children[index].outerHTML);
   }
   localStorage.setItem('ol', JSON.stringify(item));
+  
 };
 
 botaoUp.onclick = () => {
