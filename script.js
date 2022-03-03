@@ -2,7 +2,7 @@ let botaoAdicionar = document.getElementById('criar-tarefa');
 let input = document.getElementById('texto-tarefa');
 let ol = document.getElementById('lista-tarefas');   // A ol e aa Lista PAI de Todos
 let apagaTudo = document.getElementById('apaga-tudo');
-let salvaTudo = document.getElementById('salvar-tarefas');
+let btnSalva = document.getElementById('salvar-tarefas');
 let ClearComplete = document.getElementById('remover-finalizados'); 
 let ApagaSelecionado = document.getElementById('remover-selecionado');
 let botaoDown = document.getElementById('mover-baixo');
@@ -60,29 +60,54 @@ ApagaCompleted.addEventListener('click', function () {                 // pegand
     }
 });
 
-function moveUp() {
-  const selectedItem = ol.querySelector('.selected');
-  if (selectedItem.classList.contains('selected')) {
-    ol.insertBefore(selectedItem, selectedItem.previousElementSibling);
-  }
-}
-botaoUp.addEventListener('click', moveUp);
+btnSalva.onclick = () => {
+  const item = [];
 
-function moveDown() {
-  const selectedItem = ol.querySelector('.selected');
-  if (selectedItem.classList.contains('selected')) {
-    ol.insertBefore(selectedItem,selectedItem.nextElementSibling.nextElementSibling);
+  for (let index = 0; index < ol.children.length; index += 1) {
+    item.push(ol.children[index].outerHTML);
   }
-}
-botaoDown.addEventListener('click', moveDown);
+  localStorage.setItem('ol', JSON.stringify(item));
+};
 
-// function pintarCinza (event) {
-//   const itemEscolhido = event.target;
-//   if (itemEscolhido.classlist.contains('selected')) {
-//     itemEscolhido.classlist.remove('selected');
-//   }
-//   else{
-//     itemEscolhido.classlist.add('selected');
-//   }
-// }
-// ol.addEventListener('click', pintarCinza);
+botaoUp.onclick = () => {
+  const elem = document.getElementsByClassName('selected')[0];
+
+  if (elem === undefined) {
+    return;
+  }
+
+  if (elem.previousElementSibling === null) {
+    return;
+  }
+
+  const elemTxt = elem.innerText;
+  const prevElem = elem.previousElementSibling;
+  const prevTxt = prevElem.innerText;
+
+  prevElem.innerText = elemTxt;
+  prevElem.className += elem.classList;
+  elem.innerText = prevTxt;
+  elem.classList.toggle('selected');
+};
+
+botaoDown.onclick = () => {
+  const elem = document.getElementsByClassName('selected')[0];
+
+  if (elem === undefined) {
+    return;
+  }
+
+  if (elem.nextElementSibling === null) {
+    return;
+  }
+
+  const elemTxt = elem.innerText;
+  const nextElem = elem.nextElementSibling;
+  const nextTxt = nextElem.innerText;
+
+  nextElem.innerText = elemTxt;
+  nextElem.className += elem.classList;
+  elem.innerText = nextTxt;
+  elem.classList.toggle('selected');
+};
+
