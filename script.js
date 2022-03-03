@@ -111,3 +111,12 @@ botaoDown.onclick = () => {
   elem.classList.toggle('selected');
 };
 
+window.onload = () => {
+  if (localStorage.ol) {
+    let saveTry = JSON.parse(localStorage.getItem('ol'));
+    for (let i = 0; i < saveTry.length; i += 1) {
+      ol.insertAdjacentHTML('beforeend', saveTry[i]);
+  } 
+}
+}
+
