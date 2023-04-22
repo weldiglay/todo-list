@@ -3,8 +3,8 @@ const input = document.getElementById('texto-tarefa');
 const ol = document.getElementById('lista-tarefas'); // A ol e aa Lista PAI de Todos
 const apagaTudo = document.getElementById('apaga-tudo');
 const btnSalva = document.getElementById('salvar-tarefas');
-const ClearComplete = document.getElementById('remover-finalizados');
-const ApagaSelecionado = document.getElementById('remover-selecionado');
+// const clearComplete = document.getElementById('remover-finalizados');
+// const apagaSelecionado = document.getElementById('remover-selecionado');
 const botaoDown = document.getElementById('mover-baixo');
 const botaoUp = document.getElementById('mover-cima');
 
